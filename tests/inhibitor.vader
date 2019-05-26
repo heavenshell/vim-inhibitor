@@ -1,0 +1,18 @@
+# vim:set et sw=4 ts=4 tw=79:
+Execute ('Inhibitor'):
+  :edit ./src/main.rs
+  :call inhibitor#run()
+  :sleep 1
+
+  let qf = getqflist()
+  AssertEqual len(qf), 2
+
+Execute ('InhibitorError'):
+  :edit ./src/main.rs
+  :call inhibitor#errors()
+  :sleep 1
+  :wincmd w
+
+  let bufnum = bufnr('%')
+  let lines = getbufline(bufnum, 1, '$')
+  AssertEqual len(lines), 22

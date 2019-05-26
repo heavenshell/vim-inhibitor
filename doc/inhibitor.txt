@@ -1,0 +1,69 @@
+*inhibitor*	Vim plugin for rust.
+
+Version: 0.1.0
+Author: Shinya Ohynagi <sohyanagi@gmail.com>
+Repository: http://github.com/heavenshell/vim-inhibitor/
+License: BSD, see LICENSE for more details.
+
+==============================================================================
+CONTENTS						*inhibitor-contents*
+
+Introduction		|inhibitor-introduction|
+Install			|inhibitor-install|
+Usage			|inhibitor-usage|
+Changelogs		|inhibitor-changelog|
+
+==============================================================================
+INTRODUCTION						*inhibitor-introduction*
+
+|inhibitor| is a utils for Rust.
+
+==============================================================================
+INSTALL							*inhibitor-install*
+
+Install the distributed files into Vim runtime directory which is usually
+~/.vim/, or $HOME/vimfiles on Windows.
+
+If you use built in `package`, you should extract the
+file into '~/.vim/pack/*/start' directory.
+
+==============================================================================
+TUTORIAL						*inhibitor-usage*
+
+- Invoke manually
+
+Open Rust file and just execute `:Inhibitor`.
+
+- Automatically lint on save
+>
+  autocmd BufWritePost *.ts,*.tsx call Inhibitor#run()
+<
+- Auto fix
+
+Execute `:InhibitorFix` will fix automatically.
+>
+==============================================================================
+VARIABLES						*inhibitor-variables*
+
+g:inhibitor_cargo					*inhibitor_cargo*
+		Path to cargo.
+		Default value is ''
+
+g:inhibitor_rustfm					*inhibitor_rustfm*
+		Path to rustfm.
+		Default value is ''
+
+g:inhibitor_callbacks					*inhibitor_callbacls*
+		Callback functions
+		Default value is {}
+
+g:inhibitor_use_clippy					*inhibitor_use_clippy*
+		Use clippy instead of `cargo check`.
+		Default value is 0(Use cargo check) 
+
+==============================================================================
+CHANGELOG						*inhibitor-changelog*
+2019-05-25
+- First release
+
+vim:tw=78:ts=8:ft=help:norl:noet:fen:fdl=0:

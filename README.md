@@ -1,7 +1,8 @@
 # vim-inhibitor
 
-My Rust plugins.
+[![Build Status](https://travis-ci.org/heavenshell/vim-inhibitor.svg?branch=master)](https://travis-ci.org/heavenshell/vim-inhibitor)
 
+My Rust plugins.
 
 ![vim-inhibitor](./assets/vim-inhibitor.gif)
 

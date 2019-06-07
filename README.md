@@ -20,7 +20,7 @@ You can open with `:cwindow` command.
 
 ### More prettify
 
-Also you can open with `:InhibitorErrors`
+Also you can open with `:InhibitorErrors` more prettify errors.
 
 ## Format
 
@@ -38,10 +38,12 @@ Use `rls` and `vim-lsp`.
 
 ```vim
 augroup RLS
+  let g:lsp_async_completion = 0
   autocmd User lsp_setup call lsp#register_server({
     \ 'name': 'rls',
-    \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+    \ 'cmd': {server_info -> ['rustup', 'run', 'stable', 'rls']},
     \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+    \ 'root_uri':{server_info -> lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'Cargo.toml'))},
     \ 'whitelist': ['rust'],
     \ })
 augroup END

@@ -46,11 +46,11 @@ augroup RLS
     \ 'root_uri':{server_info -> lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'Cargo.toml'))},
     \ 'whitelist': ['rust'],
     \ })
+  autocmd FileType rust setlocal omnifunc=lsp#complete
+  autocmd FileType rust nnoremap <buffer> <leader>c :<c-u>LspDocumentDiagnostics <CR>
+  autocmd FileType rust nnoremap <buffer> <leader>d :<c-u>LspDefinition <CR>
+  autocmd FileType rust nnoremap <buffer> <leader>h :<c-u>LspHover<CR>
 augroup END
-autocmd FileType rust setlocal omnifunc=lsp#complete
-autocmd FileType rust nnoremap <buffer> <leader>c :<c-u>LspDocumentDiagnostics <CR>
-autocmd FileType rust nnoremap <buffer> <leader>d :<c-u>LspDefinition <CR>
-autocmd FileType rust nnoremap <buffer> <leader>h :<c-u>LspHover<CR>
 ```
 
 ## License

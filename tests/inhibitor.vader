@@ -9,6 +9,7 @@ Execute ('Inhibitor'):
 
 Execute ('InhibitorError'):
   :edit ./src/main.rs
+  :call inhibitor#run()
   :call inhibitor#errors()
   :sleep 1
   :wincmd w

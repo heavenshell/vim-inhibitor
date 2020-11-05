@@ -1,14 +1,16 @@
 # vim:set et sw=4 ts=4 tw=79:
 Execute ('Inhibitor'):
   :edit ./src/main.rs
+  :write
   :call inhibitor#run()
-  :sleep 1
+  :sleep 2
 
   let qf = getqflist()
   AssertEqual len(qf), 2
 
 Execute ('InhibitorError'):
   :edit ./src/main.rs
+  :write
   :call inhibitor#run()
   :call inhibitor#errors()
   :sleep 1
